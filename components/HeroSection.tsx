@@ -25,7 +25,7 @@ export default function HeroSection() {
       backgroundRepeat: 'no-repeat'
     }}>
       {/* Background overlay for translucency */}
-      <div className="absolute inset-0 bg-slate-950/90" />
+      <div className="absolute inset-0 bg-slate-900/90" />
       
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
