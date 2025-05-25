@@ -240,9 +240,10 @@ export default function AchievementSection() {
                 key={index}
                 className="group bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:border-slate-600/50 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl"
               >
-                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${colorClasses[achievement.color]} mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon className="h-6 w-6 text-slate-900" />
-                </div>
+                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${colorClasses[achievement.color as keyof typeof colorClasses]} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+  <Icon className="h-6 w-6 text-slate-900" />
+</div>
+
                 
                 <h5 className="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors duration-300">
                   {achievement.title}
