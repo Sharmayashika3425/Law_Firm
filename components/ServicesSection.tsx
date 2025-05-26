@@ -1,120 +1,126 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { 
-  Scale, 
-  Home, 
-  Heart, 
-  Building2, 
-  ArrowRight, 
+import { useState } from 'react';
+import {
+  Scale,
+  Home,
+  Heart,
+  Building2,
+  ArrowRight,
   CheckCircle,
   Users,
   Globe
-} from 'lucide-react'
+} from 'lucide-react';
 
 const services = [
   {
     icon: Scale,
     title: 'Criminal Matters',
-    description: 'The firm has extensive experience in representing clients\' criminal matters at pan India level across different courts with proven track record of successful case handling.',
-    color: 'from-red-500 to-red-600',
-    bgColor: 'red-500/10',
-    borderColor: 'red-500/20'
+    description:
+      "We have extensive experience representing clients in criminal matters across India, with a proven track record of successful case handling.",
+    color: 'from-red-400 to-red-500',
+    bgColor: 'red-100',
+    borderColor: 'red-200'
   },
   {
     icon: Home,
     title: 'Property Disputes',
-    description: 'Disputes may arise regarding the possession of property when it is claimed that the property is not possessed. We handle complex property litigation with expertise.',
-    color: 'from-green-500 to-green-600',
-    bgColor: 'green-500/10',
-    borderColor: 'green-500/20'
+    description:
+      'Handling complex property litigation with expertise, ensuring rightful possession and resolution of disputes.',
+    color: 'from-green-400 to-green-500',
+    bgColor: 'green-100',
+    borderColor: 'green-200'
   },
   {
     icon: Heart,
     title: 'Matrimonial Cases',
-    description: 'Matrimonial disputes involve emotions, feelings and ego. We deal with matrimonial disputes with sensitivity, providing guidance and advice with compassion.',
-    color: 'from-pink-500 to-pink-600',
-    bgColor: 'pink-500/10',
-    borderColor: 'pink-500/20'
+    description:
+      'Providing compassionate guidance and advice in matrimonial disputes, addressing emotions and sensitivities involved.',
+    color: 'from-pink-400 to-pink-500',
+    bgColor: 'pink-100',
+    borderColor: 'pink-200'
   },
   {
     icon: Building2,
-    title: 'Insolvency Matter',
-    description: 'We assist corporate entities, entrepreneurs, banks, financial institutions, bondholders, other lenders and stakeholders in complex insolvency proceedings.',
-    color: 'from-blue-500 to-blue-600',
-    bgColor: 'blue-500/10',
-    borderColor: 'blue-500/20'
+    title: 'Insolvency Matters',
+    description:
+      'Assisting corporate entities and stakeholders in complex insolvency proceedings with strategic solutions.',
+    color: 'from-blue-400 to-blue-500',
+    bgColor: 'blue-100',
+    borderColor: 'blue-200'
   }
-]
+];
 
 export default function ServicesSection() {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <section className="py-20 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v22H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20z'/%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
-      </div>
-
+    <section className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-amber-400/10 border border-amber-400/20 rounded-full px-4 py-2 text-amber-400 mb-6">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center space-x-2 bg-amber-100 border border-amber-200 rounded-full px-4 py-2 text-amber-600 mb-4">
             <Users className="h-4 w-4" />
             <span className="text-sm font-medium">Our Legal Services</span>
           </div>
-          
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
             Comprehensive Legal
-            <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent"> Solutions</span>
+            <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+              {' '}
+              Solutions
+            </span>
           </h2>
-          
-          <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full mx-auto mb-6" />
-          
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            We provide expert legal representation across diverse practice areas, ensuring personalized solutions 
-            for individuals, corporations, and international entities.
+
+          <div className="w-16 h-1 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full mx-auto mb-4" />
+
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            We provide expert legal representation across diverse practice areas, ensuring personalized solutions for individuals, corporations, and international entities.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className={`group relative bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:bg-slate-700/40 cursor-pointer ${
-                hoveredCard === index ? 'shadow-2xl' : 'shadow-lg'
+              className={`group relative bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300 hover:shadow-md cursor-pointer ${
+                hoveredCard === index ? 'shadow-lg' : 'shadow-sm'
               }`}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
               style={{
-                boxShadow: hoveredCard === index ? `0 25px 50px -12px rgba(245, 158, 11, 0.15)` : undefined
+                boxShadow:
+                  hoveredCard === index
+                    ? '0 10px 20px -5px rgba(0, 0, 0, 0.1)'
+                    : undefined
               }}
             >
               {/* Background Gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-500`} />
-              
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300`}
+              />
+
               {/* Icon */}
-              <div className={`relative mb-6 p-4 bg-${service.bgColor} border border-${service.borderColor} rounded-xl w-fit`}>
-                <service.icon className={`h-8 w-8 text-slate-300 group-hover:text-white transition-colors duration-300`} />
+              <div
+                className={`relative mb-4 p-3 bg-${service.bgColor} border border-${service.borderColor} rounded-lg w-fit`}
+              >
+                <service.icon className="h-6 w-6 text-gray-600 group-hover:text-gray-800 transition-colors duration-300" />
               </div>
 
               {/* Content */}
-              <div className="relative space-y-4">
-                <h3 className="text-xl font-bold text-white group-hover:text-amber-400 transition-colors duration-300">
+              <div className="relative space-y-3">
+                <h3 className="text-lg font-semibold text-gray-800 group-hover:text-amber-600 transition-colors duration-300">
                   {service.title}
                 </h3>
-                
-                <p className="text-slate-300 leading-relaxed text-sm group-hover:text-slate-200 transition-colors duration-300">
+
+                <p className="text-gray-600 leading-relaxed text-sm group-hover:text-gray-800 transition-colors duration-300">
                   {service.description}
                 </p>
 
                 {/* Read More Link */}
-                <div className="pt-4">
-                  <button className="inline-flex items-center space-x-2 text-amber-400 hover:text-amber-300 font-medium text-sm group-hover:translate-x-1 transition-all duration-300">
+                <div className="pt-2">
+                  <button className="inline-flex items-center space-x-2 text-amber-600 hover:text-amber-500 font-medium text-sm group-hover:translate-x-1 transition-all duration-300">
                     <span>Read More</span>
                     <ArrowRight className="h-4 w-4" />
                   </button>
@@ -122,36 +128,34 @@ export default function ServicesSection() {
               </div>
 
               {/* Hover Effect Border */}
-              <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-amber-400/20 transition-colors duration-500" />
+              <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-amber-300/20 transition-colors duration-300" />
             </div>
           ))}
         </div>
 
-        {/* Bottom CTA - Responsive Version */}
-<div className="text-center mt-16 px-4">
-  <div className="max-w-lg mx-auto bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 sm:p-8">
-    {/* Content Container - Stacks on mobile, horizontal on larger screens */}
-    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 sm:gap-8">
-      
-      {/* Left Content */}
-      <div className="flex items-center justify-center sm:justify-start space-x-4 flex-shrink-0">
-        <div className="p-3 bg-amber-400/10 rounded-full">
-          <CheckCircle className="h-6 w-6 text-amber-400" />
-        </div>
-        <div className="text-center sm:text-left">
-          <div className="text-white font-semibold">Great Legal Consultation</div>
-          <div className="text-slate-300 text-sm">Get expert advice for your case</div>
+        {/* Bottom CTA */}
+        <div className="text-center mt-12 px-4">
+          <div className="max-w-lg mx-auto bg-white border border-gray-200 rounded-xl p-6 sm:p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 sm:gap-8">
+              {/* Left Content */}
+              <div className="flex items-center justify-center sm:justify-start space-x-4 flex-shrink-0">
+                <div className="p-3 bg-amber-100 rounded-full">
+                  <CheckCircle className="h-6 w-6 text-amber-600" />
+                </div>
+                <div className="text-center sm:text-left">
+                  <div className="text-gray-800 font-semibold">Great Legal Consultation</div>
+                  <div className="text-gray-600 text-sm">Get expert advice for your case</div>
+                </div>
+              </div>
+
+              {/* CTA Button */}
+              <button className="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white font-semibold px-6 sm:px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-md hover:shadow-amber-400/25 w-full sm:w-auto whitespace-nowrap">
+                Schedule Consultation
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* CTA Button */}
-      <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-900 font-semibold px-6 sm:px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-amber-500/25 w-full sm:w-auto whitespace-nowrap">
-        Schedule Consultation
-      </button>
-      
-    </div>
-  </div>
-</div>
     </section>
-  )
+  );
 }
