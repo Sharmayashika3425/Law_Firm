@@ -127,25 +127,31 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center space-x-8 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
-            <div className="flex items-center space-x-4">
-              <div className="p-3 bg-amber-400/10 rounded-full">
-                <CheckCircle className="h-6 w-6 text-amber-400" />
-              </div>
-              <div className="text-left">
-                <div className="text-white font-semibold">Great Legal Consultation</div>
-                <div className="text-slate-300 text-sm">Get expert advice for your case</div>
-              </div>
-            </div>
-            
-            <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-900 font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-amber-500/25">
-              Schedule Consultation
-            </button>
-          </div>
+        {/* Bottom CTA - Responsive Version */}
+<div className="text-center mt-16 px-4">
+  <div className="max-w-lg mx-auto bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 sm:p-8">
+    {/* Content Container - Stacks on mobile, horizontal on larger screens */}
+    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 sm:gap-8">
+      
+      {/* Left Content */}
+      <div className="flex items-center justify-center sm:justify-start space-x-4 flex-shrink-0">
+        <div className="p-3 bg-amber-400/10 rounded-full">
+          <CheckCircle className="h-6 w-6 text-amber-400" />
+        </div>
+        <div className="text-center sm:text-left">
+          <div className="text-white font-semibold">Great Legal Consultation</div>
+          <div className="text-slate-300 text-sm">Get expert advice for your case</div>
         </div>
       </div>
+
+      {/* CTA Button */}
+      <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-900 font-semibold px-6 sm:px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-amber-500/25 w-full sm:w-auto whitespace-nowrap">
+        Schedule Consultation
+      </button>
+      
+    </div>
+  </div>
+</div>
     </section>
   )
 }
